@@ -30,7 +30,7 @@
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([LYYStickerGalleryCategoryCell class]) bundle:nil] forCellWithReuseIdentifier:NSStringFromClass([LYYStickerGalleryCategoryCell class])];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(DidSelectStickerNotificationString) name:DidSelectStickerNotificationString object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(DidSelectStickerNotificationString:) name:DidSelectStickerNotificationString object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(DidStickerGalleryViewDismissNotificationString) name:DidStickerGalleryViewDismissNotificationString object:nil];
     
 }
@@ -39,15 +39,15 @@
 {
     [self removeFromSuperview];
     if (self.didDismissCallback) {
-        self.didDismissCallback(NO);
+        self.didDismissCallback(NO,nil);
     }
 }
 
-- (void)DidSelectStickerNotificationString
+- (void)DidSelectStickerNotificationString:(NSNotification *)note
 {
     [self removeFromSuperview];
     if (self.didDismissCallback) {
-        self.didDismissCallback(YES);
+        self.didDismissCallback(YES,note.object);
     }
 }
 

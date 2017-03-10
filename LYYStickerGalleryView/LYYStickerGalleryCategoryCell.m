@@ -9,6 +9,7 @@
 #import "LYYStickerGalleryCategoryCell.h"
 #import "LYYStickerGalleryStickerCell.h"
 #import "LYYStickerHelper.h"
+#import "LYYStickerModel.h"
 
 @interface  LYYStickerGalleryCategoryCell()<UICollectionViewDelegate,UICollectionViewDataSource,UIGestureRecognizerDelegate>
 @property (nonatomic, strong) NSMutableArray *datalist;
@@ -140,8 +141,15 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    UICollectionViewLayoutAttributes *attributes = [collectionView layoutAttributesForItemAtIndexPath:indexPath];
+    CGPoint postion = [self convertPoint:attributes.center toView:[UIApplication sharedApplication].keyWindow];
     [[LYYStickerHelper sharedClient] addRecentEmoji:self.datalist[indexPath.item]];
-    [[NSNotificationCenter defaultCenter] postNotificationName:DidSelectStickerNotificationString object:nil];
+    
+    LYYStickerModel *model = [[LYYStickerModel alloc] init];
+    model.stickerName = self.datalist[indexPath.item];
+    model.position = postion;
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:DidSelectStickerNotificationString object:model];
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath

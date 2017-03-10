@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B3FFA3C1E72A961002F47DF /* LYYStickerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B3FFA3B1E72A961002F47DF /* LYYStickerModel.m */; };
 		6B6E1A6E1E70FE6D001C1850 /* ZoomRotatePanImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B6E1A6C1E70FE6D001C1850 /* ZoomRotatePanImageView.m */; };
 		6BBF38531E6FD99700C3A01C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BBF38521E6FD99700C3A01C /* main.m */; };
 		6BBF38561E6FD99700C3A01C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BBF38551E6FD99700C3A01C /* AppDelegate.m */; };
@@ -25,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6B3FFA3A1E72A961002F47DF /* LYYStickerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYYStickerModel.h; sourceTree = "<group>"; };
+		6B3FFA3B1E72A961002F47DF /* LYYStickerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYYStickerModel.m; sourceTree = "<group>"; };
 		6B6E1A6B1E70FE6D001C1850 /* ZoomRotatePanImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoomRotatePanImageView.h; sourceTree = "<group>"; };
 		6B6E1A6C1E70FE6D001C1850 /* ZoomRotatePanImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZoomRotatePanImageView.m; sourceTree = "<group>"; };
 		6BBF384E1E6FD99700C3A01C /* LYYStickerGalleryView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYYStickerGalleryView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +109,8 @@
 				6BBF38511E6FD99700C3A01C /* Supporting Files */,
 				6BBF38571E6FD99700C3A01C /* ViewController.h */,
 				6BBF38581E6FD99700C3A01C /* ViewController.m */,
+				6B3FFA3A1E72A961002F47DF /* LYYStickerModel.h */,
+				6B3FFA3B1E72A961002F47DF /* LYYStickerModel.m */,
 			);
 			path = LYYStickerGalleryView;
 			sourceTree = "<group>";
@@ -200,6 +205,7 @@
 				6BBF38591E6FD99700C3A01C /* ViewController.m in Sources */,
 				6BBF38561E6FD99700C3A01C /* AppDelegate.m in Sources */,
 				6BBF38831E6FDE5700C3A01C /* LYYStickerGalleryStickerCell.m in Sources */,
+				6B3FFA3C1E72A961002F47DF /* LYYStickerModel.m in Sources */,
 				6BBF38881E6FDE5700C3A01C /* LYYStickerGalleryCategoryCell.m in Sources */,
 				6BBF38531E6FD99700C3A01C /* main.m in Sources */,
 				6B6E1A6E1E70FE6D001C1850 /* ZoomRotatePanImageView.m in Sources */,

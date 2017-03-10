@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LYYStickerModel.h"
 
 @interface LYYStickerGalleryView : UIView
-@property (nonatomic, copy) void (^didDismissCallback)(BOOL showSticker);
+@property (nonatomic, copy) void (^didDismissCallback)(BOOL showSticker, LYYStickerModel *stickerModel);
 
 @end

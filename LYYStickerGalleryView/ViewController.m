@@ -35,9 +35,9 @@
     self.stickerGalleryView = [[NSBundle mainBundle] loadNibNamed:NSStringFromClass([LYYStickerGalleryView class]) owner:self options:nil].firstObject;
     self.stickerGalleryView.frame = self.view.bounds;
     __weak typeof(self) weakSelf = self;
-    self.stickerGalleryView.didDismissCallback = ^(BOOL showSticker){
+    self.stickerGalleryView.didDismissCallback = ^(BOOL showSticker, LYYStickerModel *stickerModel){
         if (showSticker) {
-            [weakSelf addStickerView];
+            [weakSelf addStickerViewWithStickerModel:stickerModel];
         }else {
             weakSelf.stickerGalleryView = nil;
         }
@@ -55,7 +55,7 @@
 }
 
 
-- (void)addStickerView
+- (void)addStickerViewWithStickerModel:(LYYStickerModel *)stickerModel
 {
     self.stickerGalleryView = nil;
     ZoomRotatePanImageView *stickerView = [[ZoomRotatePanImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
@@ -71,6 +71,6 @@
     UIGraphicsEndImageContext();
     stickerView.image = resultImage;
     [self.view addSubview:stickerView];
-    stickerView.center = self.view.center;
+    stickerView.center = stickerModel.position;
 }
 @end
